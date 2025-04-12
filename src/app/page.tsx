@@ -32,9 +32,9 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -50 }}
-            className="text-4xl md:text-5xl font-semibold text-[#a0f5d1]"
+            className="text-4xl md:text-5xl font-semibold text-[#a0f5d1] text-center"
           >
-            👋 Hello!
+            👋 Greetings!
           </motion.div>
         )}
 
@@ -43,9 +43,9 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0,y: -50 }}
-            className="text-4xl md:text-5xl font-semibold text-[#98e8ef]"
+            className="text-4xl md:text-5xl font-semibold text-[#98e8ef] text-center"
           >
-            My name is
+            Let's take a Glimpse at
           </motion.div>
         )}
 
@@ -118,16 +118,15 @@ const Home = () => {
                 </Link>
               </div>
 
-              {/* Right: Description Text */}
               <p className="text-sm md:text-base text-gray-400 leading-relaxed sm:text-right sm:max-w-xs sm:ml-auto self-center">
-              <span className="font-bold italic">Results-driven Full Stack Web Developer</span> with a strong passion for building scalable, high-performance web applications.
+              <span className="font-bold italic tracking-wide">Results-driven Full Stack Web Developer</span> with a strong passion for building scalable, high-performance web applications.
               </p>
             </div>
 
-            <h3 className="text-lg text-gray-300 flex items-center justify-center text-center gap-2">
+            <div className="text-lg text-gray-300 flex items-center justify-center text-center gap-2">
               <FaLocationDot />
               <span> New Delhi, India</span>
-            </h3>
+            </div>
           </motion.div>
         )}
       </div>
