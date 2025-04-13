@@ -7,7 +7,7 @@ interface HoverButtonProps {
 
 const HoverButton: React.FC<HoverButtonProps> = ({ text, icon }) => {
   return (
-    <div className="relative w-40 h-12 bg-white text-black rounded overflow-hidden group cursor-pointer">
+    <div className="relative w-40 h-12 bg-gradient-to-r from-[#a0f5d1] via-[#98e8ef] to-[#a0f5d1] text-black rounded overflow-hidden group cursor-pointer">
       <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:translate-x-full">
         {text}
       </span>

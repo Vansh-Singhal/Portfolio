@@ -32,3 +32,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* .cursor-glow:hover {
+  text-shadow: 0 0 8px #98e8ef, 0 0 12px #a0f5d1;
+} */
