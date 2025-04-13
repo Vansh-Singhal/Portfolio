@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { forwardRef, useState } from "react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import TextUnderline from "@/components/ui/text-underline";
@@ -9,23 +9,34 @@ import Link from "next/link";
 import { GoDot } from "react-icons/go";
 import { FaLocationDot } from "react-icons/fa6";
 import TypingText from "@/components/ui/typing-text";
+import { useAnimationStep } from "@/hooks/useAnimationStep";
 
-const Hero = () => {
-  const [step, setStep] = useState(0);
+type Props = {
+  scrollRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
+  const [clicked, setClicked] = useState(false);
+  const step = useAnimationStep();
   const [showSubtitle, setShowSubtitle] = useState(false);
 
-  useEffect(() => {
-    const timeouts = [
-      setTimeout(() => setStep(1), 2000),
-      setTimeout(() => setStep(2), 4000),
-      setTimeout(() => setStep(3), 6000),
-    ];
+  const handleClick = () => {
+    setClicked(true);
+    setTimeout(() => {
+      scrollRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 1200);
 
-    return () => timeouts.forEach(clearTimeout);
-  }, []);
+    setTimeout(() => {
+      setClicked(false); // Reset animation for the next trigger
+    }, 1800);
+  };
 
   return (
-    <section id="home" className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative">
+    <section
+    ref={ref}
+      id="home"
+      className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative"
+    >
       <div className="w-full h-full border-2 border-white/50 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-900 rounded-md">
         <ShootingStars />
         <StarsBackground />
@@ -104,13 +115,33 @@ const Hero = () => {
                   <GoDot />
                   <TextUnderline text="Home" classes="text-white" />
                 </Link>
-                <Link
-                  href="#about"
-                  className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
+                <motion.div
+                  onClick={handleClick}
+                  initial={{ rotate: 0, y: 0 }}
+                  animate={
+                    clicked
+                      ? {
+                          rotate: [0, 15, 15],
+                          y: [0, 0, 300],
+                          transition: {
+                            duration: 0.9,
+                            times: [0, 0.25, 1],
+                            ease: "easeInOut",
+                          },
+                        }
+                      : {
+                          rotate: 0,
+                          y: 0,
+                          transition: { duration: 0.5 },
+                        }
+                  }
+                  className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 cursor-pointer"
+                  style={{ transformOrigin: "left center" }} // 🪝 makes the dot the anchor
                 >
-                  <GoDot />
+                  <GoDot className="shrink-0" />
                   <TextUnderline text="About" classes="text-white" />
-                </Link>
+                </motion.div>
+
                 <Link
                   href="#"
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
@@ -138,7 +169,8 @@ const Hero = () => {
                 <span className="font-bold italic tracking-wide">
                   Results-driven Full Stack Web Developer
                 </span>{" "}
-                with a strong passion for building scalable, high-performance web applications.
+                with a strong passion for building scalable, high-performance
+                web applications.
               </p>
             </div>
 
@@ -151,6 +183,7 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
+Hero.displayName = "Hero";
 export default Hero;

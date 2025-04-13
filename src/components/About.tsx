@@ -1,10 +1,9 @@
 "use client";
 
-import { FaHome } from "react-icons/fa";
+import { FaDownload, FaHome } from "react-icons/fa";
 import { ThreeDMarquee } from "./ui/3d-marquee";
 import HoverButton from "./ui/hover-button";
 import TextUnderline from "./ui/text-underline";
-import { SiGoogledocs } from "react-icons/si";
 
 const images = [
   "https://images.unsplash.com/photo-1603481546238-48724041521?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -39,11 +38,16 @@ const images = [
   "https://images.unsplash.com/photo-1603481546238-487240415921?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
-const About = () => {
+type AboutProps = {
+  sectionRef: React.RefObject<HTMLDivElement | null>;
+};
+
+const About = ({ sectionRef }: AboutProps) => {
   return (
     <section
+      ref={sectionRef}
       id="about"
-      className="min-h-screen max-w-screen p-8 bg-gradient-to-b from-black via-[#000f] to-[#151525] flex flex-col md:flex-row items-center justify-center overflow-hidden relative md:gap-8"
+      className="min-h-screen max-w-screen px-8 bg-gradient-to-b from-black via-[#000f] to-[#151525] flex flex-col md:flex-row items-center justify-center overflow-hidden relative md:gap-8"
     >
       <div className="my-10 w-full h-full p-2 rounded-2xl space-y-8">
         <h2 className="text-3xl md:text-5xl font-bold tracking-wide text-transparent">
@@ -71,8 +75,8 @@ const About = () => {
           </p>
         </div>
 
-        <div className="md:pt-4 w-full">
-          <HoverButton text="Resume" icon={<SiGoogledocs />} />
+        <div className="md:pt-4 w-full flex flex-row-reverse">
+          <HoverButton text="My Resume" icon={<FaDownload />} />
         </div>
       </div>
       <div className="my-10 w-full md:max-w-1/2 rounded-3xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-[#151525]">
