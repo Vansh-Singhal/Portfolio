@@ -152,14 +152,14 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
                   <TextUnderline text="Skills" classes="text-white" />
                 </Link>
                 <Link
-                  href="#"
+                  href="projects"
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
                 >
                   <GoDot />
                   <TextUnderline text="Projects" classes="text-white" />
                 </Link>
                 <Link
-                  href="#"
+                  href="contact"
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
                 >
                   <GoDot />

@@ -18,36 +18,36 @@ const Skills = () => {
         <GridItem
           area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
           icon={<FaSearch />}
-          title="Do things the right way"
-          description="Running out of copy so I'll write anything."
+          title="WEB DEVELOPMENT"
+          description="Built responsive, user-friendly websites and web apps using modern frontend technologies such as HTML 5,CSS 3, JavaScript and TypeScript."
         />
 
         <GridItem
           area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
           icon={<FaSearch />}
-          title="The best AI code editor ever."
-          description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+          title="Backend Languages"
+          description="Developed scalable backend systems with Node.js, Express, Python, Java, C++ and Spring Boot."
         />
 
         <GridItem
           area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/9]"
           icon={<FaSearch />}
-          title="You should buy Aceternity UI Pro"
-          description="It's the best money you'll ever spend"
+          title="MERN STACK And NEXT.JS"
+          description="Built multiple dynamic full-stack applications using MongoDB, Express, React, and Node.js or Next.js with seamless frontend-backend integration."
         />
 
         <GridItem
           area="md:[grid-area:2/7/3/13] xl:[grid-area:1/9/2/13]"
           icon={<FaSearch />}
-          title="This card is also built by Cursor"
-          description="I'm not even kidding. Ask my mom if you don't believe me."
+          title="Cloud & DevOps"
+          description="Deployed and maintained web applications using GitHub, AWS, Azure, Docker, Vercel, and Cloudinary for performance and reliability."
         />
 
         <GridItem
           area="md:[grid-area:3/1/4/13] xl:[grid-area:2/9/3/13]"
           icon={<FaSearch />}
-          title="Coming soon on Aceternity UI"
-          description="I'm writing the code as I record this, no shit."
+          title="Database Handling"
+          description="Managed structured and unstructured data using MySQL, MongoDB, Firebase, and NoSQL for efficient data storage and retrieval."
         />
       </ul>
     </section>
