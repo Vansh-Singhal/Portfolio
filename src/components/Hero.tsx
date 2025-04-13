@@ -33,7 +33,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
 
   return (
     <section
-    ref={ref}
+      ref={ref}
       id="home"
       className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative"
     >
@@ -107,7 +107,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
           >
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 w-full px-4 justify-between">
               {/* Left: Navigation */}
-              <div className="flex flex-col items-start gap-2 sm:w-1/2">
+              <div className="flex flex-col items-start sm:gap-2 sm:w-1/2">
                 <Link
                   href="#"
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
@@ -121,10 +121,11 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
                   animate={
                     clicked
                       ? {
-                          rotate: [0, 15, 15],
-                          y: [0, 0, 300],
+                          rotate: [0, 100, 80, 95, 85, 85, 85, 60, 60],
+                          y: [0, 0, 400],
+                          opacity: [1, 1, 1, 0],
                           transition: {
-                            duration: 0.9,
+                            duration: 1.2,
                             times: [0, 0.25, 1],
                             ease: "easeInOut",
                           },
@@ -132,18 +133,19 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
                       : {
                           rotate: 0,
                           y: 0,
+                          opacity: 1,
                           transition: { duration: 0.5 },
                         }
                   }
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 cursor-pointer"
-                  style={{ transformOrigin: "left center" }} // 🪝 makes the dot the anchor
+                  style={{ transformOrigin: "left center" }}
                 >
                   <GoDot className="shrink-0" />
                   <TextUnderline text="About" classes="text-white" />
                 </motion.div>
 
                 <Link
-                  href="#"
+                  href="#skills"
                   className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2"
                 >
                   <GoDot />

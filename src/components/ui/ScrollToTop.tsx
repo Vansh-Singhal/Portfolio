@@ -34,7 +34,7 @@ const ScrollToTop = ({ targetRef }: Props) => {
           animate={{ opacity: 1, y: -20 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 p-3 bg-[#98e8ef] text-black rounded-full shadow-md hover:scale-110 transition cursor-pointer"
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 p-3 bg-[#98e8ef] text-black rounded-full shadow-md hover:scale-110 transition cursor-pointer hidden sm:block"
           aria-label="Scroll to top"
         >
           <FaArrowUp />

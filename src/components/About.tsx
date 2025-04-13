@@ -4,6 +4,7 @@ import { FaDownload, FaHome } from "react-icons/fa";
 import { ThreeDMarquee } from "./ui/3d-marquee";
 import HoverButton from "./ui/hover-button";
 import TextUnderline from "./ui/text-underline";
+import {motion} from 'motion/react';
 
 const images = [
   "https://images.unsplash.com/photo-1603481546238-48724041521?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -47,18 +48,26 @@ const About = ({ sectionRef }: AboutProps) => {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen max-w-screen px-8 bg-gradient-to-b from-black via-[#000f] to-[#151525] flex flex-col md:flex-row items-center justify-center overflow-hidden relative md:gap-8"
+      className="min-h-screen max-w-screen px-8 bg-gradient-to-b from-black via-[#0505010] to-[#151525] flex flex-col md:flex-row items-center justify-center overflow-hidden relative md:gap-8"
     >
-      <div className="my-10 w-full h-full p-2 rounded-2xl space-y-8">
+      {/* Left Content */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="my-10 w-full h-full p-2 rounded-2xl space-y-8"
+      >
         <h2 className="text-3xl md:text-5xl font-bold tracking-wide text-transparent">
           <TextUnderline
             text="About Me"
             classes="bg-gradient-to-r from-[#a0f5d1] to-[#98e8ef] bg-clip-text"
           />
         </h2>
+
         <div className="text-[#98e8ef] text-sm md:text-md lg:text-lg space-y-4 leading-relaxed tracking-wide font-light">
           <p>
-            I'm a fullstack developer passionate about building accessible,
+          I'm a fullstack developer passionate about building accessible,
             pixel-perfect, and resilient applications that fuse thoughtful
             design with solid engineering. I thrive at the intersection of
             creativity and code — weaving logic and aesthetics into seamless
@@ -66,7 +75,7 @@ const About = ({ sectionRef }: AboutProps) => {
             performance, usability, and precision in mind.
           </p>
           <p>
-            In my spare time, you'll usually find me jamming on my guitar,
+          In my spare time, you'll usually find me jamming on my guitar,
             getting lost in a good rhythm, sinking threes on the court, or
             diving into immersive game worlds — headphones on, heart full,
             controller ready. And when inspiration strikes, I’m often tinkering
@@ -78,12 +87,20 @@ const About = ({ sectionRef }: AboutProps) => {
         <div className="md:pt-4 w-full flex flex-row-reverse">
           <HoverButton text="My Resume" icon={<FaDownload />} />
         </div>
-      </div>
-      <div className="my-10 w-full md:max-w-1/2 rounded-3xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-[#151525]">
+      </motion.div>
+
+      {/* Right Image Marquee */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        className="my-10 w-full md:max-w-1/2 rounded-3xl bg-gray-950/5 p-2 ring-1 ring-neutral-700/10 dark:bg-[#151525]"
+      >
         <ThreeDMarquee images={images} />
-      </div>
+      </motion.div>
     </section>
-  );
+  )
 };
 
 export default About;
