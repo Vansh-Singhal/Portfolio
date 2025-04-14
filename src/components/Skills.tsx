@@ -32,7 +32,7 @@ const Skills = () => {
         <GridItem
           area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/9]"
           icon={<FaSearch />}
-          title="MERN STACK And NEXT.JS"
+          title="MERN Stack And Next.js"
           description="Built multiple dynamic full-stack applications using MongoDB, Express, React, and Node.js or Next.js with seamless frontend-backend integration."
         />
 

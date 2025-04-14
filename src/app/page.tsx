@@ -5,10 +5,60 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { MultiStepLoader } from "@/components/ui/multi-step-loader";
-import ScrollToTop from "@/components/ui/ScrollToTop";
 import { useEffect, useRef, useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { MdEmail, MdPhone } from "react-icons/md";
+import { SiLeetcode } from "react-icons/si";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import { FaHome } from "react-icons/fa";
 
 const Home = () => {
+  const links = [
+    {
+      title: "Back to Top",
+      icon: (
+        <FaHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+
+    {
+      title: "Contact",
+      icon: (
+        <MdPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#contact",
+    },
+    {
+      title: "Email",
+      icon: (
+        <MdEmail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#contact",
+    },
+    {
+      title: "LinkedIn",
+      icon: (
+        <FaLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://linkedin.com/in/vansh-singhal-182939289/",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <FaGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://github.com/Vansh-Singhal",
+    },
+    {
+      title: "LeetCode",
+      icon: (
+        <SiLeetcode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://leetcode.com/u/vansh_singhal_11/",
+    },
+  ];
+
   const [loading, setLoading] = useState(true);
 
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +94,12 @@ const Home = () => {
           <About sectionRef={aboutRef} />
           <Skills />
           <Projects />
-          <ScrollToTop targetRef={heroRef} />
+          <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full">
+            <FloatingDock
+              mobileClassName=""
+              items={links}
+            />
+          </div>
         </div>
       )}
     </>
