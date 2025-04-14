@@ -94,7 +94,7 @@ const Home = () => {
           <About sectionRef={aboutRef} />
           <Skills />
           <Projects />
-          <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full">
+          <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full z-50">
             <FloatingDock
               mobileClassName=""
               items={links}

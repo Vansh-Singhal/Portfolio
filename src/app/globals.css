@@ -77,6 +77,15 @@ body {
   scroll-behavior: smooth;
 }
 
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* .cursor-glow:hover {
   text-shadow: 0 0 8px #98e8ef, 0 0 12px #a0f5d1;
 } */
