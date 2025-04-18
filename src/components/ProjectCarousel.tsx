@@ -57,8 +57,8 @@ export default function ProjectCarousel({ projects, className }: ProjectCarousel
 
   return (
     <div className={`relative w-full min-h-full overflow-hidden rounded-xl ${className}`}>
-      <div className="absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r from-[#102015]/50 to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l from-[#102015]/50 to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 z-10 h-full w-16 pointer-events-none" />
+      <div className="absolute right-0 top-0 z-10 h-full w-16 pointer-events-none" />
 
       {/* Navigation buttons */}
       <button
@@ -132,7 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
           priority
         />
       </div>
-      <div className="flex flex-col justify-between md:pt-12 p-6 max-h-[60%] bg-[#0f1a14]/80 backdrop-blur-md rounded-b-xl border border-[#a0f5d1]/10">
+      <div className="flex flex-col justify-between md:pt-12 p-6 max-h-[60%] bg-[#151525]/50 backdrop-blur-md rounded-b-xl border border-[#a0f5d1]/10">
         <div>
           <h3 className="text-2xl font-bold text-[#a0f5d1] md:text-3xl mb-3 text-center">
             {project.title}
@@ -143,7 +143,7 @@ function ProjectCard({ project }: { project: Project }) {
           href={project.URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center justify-center rounded-md border border-[#a0f5d1]/20 bg-[#a0f5d1]/10 px-4 py-2 text-sm font-medium text-[#a0f5d1] transition-colors hover:bg-[#a0f5d1]/20 focus:outline-none focus:ring-2 focus:ring-[#a0f5d1]/30 focus:ring-offset-2 focus:ring-offset-[#102015] group"
+          className="mt-4 inline-flex items-center justify-center rounded-md border border-[#a0f5d1]/20 bg-[#a9afff]/10 px-4 py-2 text-sm font-medium text-[#a0f5d1] transition-colors hover:bg-[#a0f5d1]/20 focus:outline-none focus:ring-2 focus:ring-[#a0f5d1]/30 focus:ring-offset-2 focus:ring-offset-[#102015] group"
         >
           View Project
           <FiExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

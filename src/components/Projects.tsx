@@ -68,7 +68,7 @@ const Projects = () => {
       <div className="w-full h-full md:max-w-1/2 my-10 p-2 rounded-2xl space-y-8">
         <ProjectCarousel
           projects={projects}
-          className="h-[500px] md:h-[600px]"
+          className="h-[500px] md:h-[600px] shadow-white/30 shadow-2xl"
         />
       </div>
       <div className="my-10 w-full md:max-w-1/2 h-full p-2 rounded-2xl space-y-8">

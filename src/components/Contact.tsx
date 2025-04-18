@@ -63,28 +63,28 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2",
+    className: "md:col-span-2 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
     thumbnail:
       "https://images.unsplash.com/photo-1584543515885-b8981dbf0b5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1",
+    className: "col-span-1 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
     thumbnail:
       "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1",
+    className: "col-span-1 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
     thumbnail:
       "https://images.unsplash.com/photo-1596526131090-bcbe09e432d3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2",
+    className: "md:col-span-2 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
     thumbnail:
       "https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
       {/* Right Column: Earth Canvas */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 0.5)}
-        className="relative z-10 flex-1 h-full"
+        className="hidden lg:block relative z-10 flex-1 h-full max-w-1/2"
       >
         <EarthCanvas />
       </motion.div>
