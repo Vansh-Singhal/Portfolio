@@ -11,6 +11,7 @@ import { MdEmail, MdPhone } from "react-icons/md";
 import { SiLeetcode } from "react-icons/si";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { FaHome } from "react-icons/fa";
+import Contact from "@/components/Contact";
 
 const Home = () => {
   const links = [
@@ -27,14 +28,14 @@ const Home = () => {
       icon: (
         <MdPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#contact",
+      href : "tel:+919773699880"
     },
     {
       title: "Email",
       icon: (
         <MdEmail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#contact",
+      href : "mailto:vanshsinghal@hotmail.com",
     },
     {
       title: "LinkedIn",
@@ -94,6 +95,7 @@ const Home = () => {
           <About sectionRef={aboutRef} />
           <Skills />
           <Projects />
+          <Contact />
           <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full z-50">
             <FloatingDock
               mobileClassName=""
