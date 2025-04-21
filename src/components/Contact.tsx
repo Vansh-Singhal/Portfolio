@@ -25,7 +25,7 @@ const SkeletonOne = () => (
 
 const SkeletonTwo = () => (
   <div>
-    <p className="font-bold md:text-4xl text-xl text-white">Phone Number</p>
+    <p className="font-bold md:text-4xl text-xl text-white">Contact No.</p>
     <Link
       href="tel:+919773699880"
       className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2 "
@@ -63,28 +63,28 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
+    className: "md:col-span-2 data-cursor-hover ",
     thumbnail:
       "https://images.unsplash.com/photo-1584543515885-b8981dbf0b5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
+    className: "col-span-1 data-cursor-hover ",
     thumbnail:
       "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
+    className: "col-span-1 data-cursor-hover",
     thumbnail:
       "https://images.unsplash.com/photo-1596526131090-bcbe09e432d3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2 cursor-pointer transform transition duration-300 hover:scale-[1.02] hover:shadow-2xl",
+    className: "md:col-span-2 data-cursor-hover ",
     thumbnail:
       "https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },

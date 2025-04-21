@@ -12,6 +12,8 @@ import { SiLeetcode } from "react-icons/si";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { FaHome } from "react-icons/fa";
 import Contact from "@/components/Contact";
+import CursorGlowWrapper from "@/components/ui/cursor-glow-wrapper";
+import CustomCursor from "@/components/ui/custom-cursor";
 
 const Home = () => {
   const links = [
@@ -28,14 +30,14 @@ const Home = () => {
       icon: (
         <MdPhone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href : "tel:+919773699880"
+      href: "tel:+919773699880",
     },
     {
       title: "Email",
       icon: (
         <MdEmail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href : "mailto:vanshsinghal@hotmail.com",
+      href: "mailto:vanshsinghal@hotmail.com",
     },
     {
       title: "LinkedIn",
@@ -83,6 +85,7 @@ const Home = () => {
 
   return (
     <>
+    <CustomCursor /> 
       {loading ? (
         <MultiStepLoader
           loadingStates={loadingStates}
@@ -90,20 +93,21 @@ const Home = () => {
           duration={500}
         />
       ) : (
-        <div>
-          <Hero scrollRef={aboutRef} ref={heroRef} />
-          <About sectionRef={aboutRef} />
-          <Skills />
-          <Projects />
-          <Contact />
-          <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full z-50">
-            <FloatingDock
-              mobileClassName=""
-              items={links}
-            />
+        <CursorGlowWrapper>
+          <div>
+
+            <Hero scrollRef={aboutRef} ref={heroRef} />
+            <About sectionRef={aboutRef} />
+            <Skills />
+            <Projects />
+            <Contact />
+            <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full z-50">
+              <FloatingDock mobileClassName="" items={links} />
+            </div>
           </div>
-        </div>
-      )}
+        </CursorGlowWrapper>
+      )
+    }
     </>
   );
 };

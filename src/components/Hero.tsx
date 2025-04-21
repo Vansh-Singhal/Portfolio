@@ -137,7 +137,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
                           transition: { duration: 0.5 },
                         }
                   }
-                  className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 cursor-pointer"
+                  className="px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 data-cursor-hover"
                   style={{ transformOrigin: "left center" }}
                 >
                   <GoDot className="shrink-0" />
