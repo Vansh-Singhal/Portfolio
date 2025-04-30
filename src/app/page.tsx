@@ -84,7 +84,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="max-w-screen overflow-hidden">
     <CustomCursor /> 
       {loading ? (
         <MultiStepLoader
@@ -102,13 +102,13 @@ const Home = () => {
             <Projects />
             <Contact />
             <div className="fixed bottom-2 right-2 flex items-center justify-center md:w-full z-50">
-              <FloatingDock mobileClassName="" items={links} />
+              <FloatingDock items={links} />
             </div>
           </div>
         </CursorGlowWrapper>
       )
     }
-    </>
+    </div>
   );
 };
 

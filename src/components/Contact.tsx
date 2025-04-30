@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative h-screen w-full flex flex-col lg:flex-row gap-10 overflow-hidden bg-black"
+      className="relative h-screen max-w-screen flex flex-col lg:flex-row gap-10 overflow-hidden bg-black"
     >
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
