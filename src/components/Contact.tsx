@@ -16,6 +16,7 @@ const SkeletonOne = () => (
     <p className="font-bold md:text-4xl text-xl text-white">Email</p>
     <Link
       href="mailto:vanshsinghal@hotmail.com"
+      target="_blank"
       className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       vanshsinghal@hotmail.com <IoIosNavigate size={20} />
@@ -28,6 +29,7 @@ const SkeletonTwo = () => (
     <p className="font-bold md:text-4xl text-xl text-white">Contact No.</p>
     <Link
       href="tel:+919773699880"
+      target="_blank"
       className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       +91 9773699880 <IoIosNavigate size={20} />
@@ -40,6 +42,7 @@ const SkeletonThree = () => (
     <p className="font-bold md:text-4xl text-xl text-white">Instagram</p>
     <Link
       href="https://www.instagram.com/imma.vansh/"
+      target="_blank"
       className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       https://www.instagram.com <IoIosNavigate size={20} />
@@ -52,6 +55,7 @@ const SkeletonFour = () => (
     <p className="font-bold md:text-4xl text-xl text-white">LinkedIn</p>
     <Link
       href="https://linkedin.com/in/vansh-singhal-182939289/"
+      target="_blank"
       className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       https://www.linkedin.com <IoIosNavigate size={20} />

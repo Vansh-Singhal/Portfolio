@@ -93,7 +93,6 @@ const Home = () => {
       ) : (
         <CursorGlowWrapper>
           <div>
-
             <Hero scrollRef={aboutRef} ref={heroRef} />
             <About sectionRef={aboutRef} />
             <Skills />

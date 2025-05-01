@@ -5,6 +5,7 @@ import TextUnderline from "./ui/text-underline";
 import HoverButton from "./ui/hover-button";
 import { FaGithub } from "react-icons/fa";
 import ProjectCarousel from "./ProjectCarousel";
+import Link from "next/link";
 
 interface Project {
   id: number;
@@ -114,7 +115,9 @@ const Projects = () => {
           transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
           className="md:pt-4 w-full flex flex-row"
         >
-          <HoverButton text="More Projects" icon={<FaGithub size={25} />} />
+          <Link href="https://github.com/Vansh-Singhal" target="_blank">
+            <HoverButton text="More Projects" icon={<FaGithub size={25} />} />
+          </Link>
         </motion.div>
       </motion.div>
     </section>

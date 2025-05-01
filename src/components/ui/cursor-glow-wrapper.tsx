@@ -45,7 +45,7 @@ const CursorGlowWrapper: React.FC<CursorGlowWrapperProps> = ({ children }) => {
       <div
         ref={glowRef}
         className={cn(
-          'pointer-events-none absolute z-[9999] h-40 w-40 -translate-x-1/2 -translate-y-1/2',
+          'pointer-events-none absolute z-[9999] size-20 -translate-x-1/2 -translate-y-1/2',
           'rounded-full bg-white/10 blur-xl transition-opacity duration-300',
           isActive ? 'opacity-100' : 'opacity-0'
         )}

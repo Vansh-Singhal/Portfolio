@@ -42,7 +42,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
       id="home"
       className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative"
     >
-      <div className="w-full h-full border-2 border-white/50 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-900 rounded-md backdrop-blur-sm">
+      <div className="w-full h-full border-2 border-white/10 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-900 rounded-md backdrop-blur-sm">
         <ShootingStars />
         <StarsBackground />
 
@@ -131,7 +131,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
               >
                 <span className="font-bold italic tracking-wide">
                   Results-driven Full Stack Web Developer
-                </span>
+                </span>{" "}
                 with a strong passion for building scalable, high-performance
                 web applications.
               </motion.p>
