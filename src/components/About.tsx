@@ -1,10 +1,10 @@
 "use client";
 
-import { FaDownload, FaHome } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 import { ThreeDMarquee } from "./ui/3d-marquee";
 import HoverButton from "./ui/hover-button";
 import TextUnderline from "./ui/text-underline";
-import {motion} from 'motion/react';
+import { motion } from "motion/react";
 
 const images = [
   "https://images.unsplash.com/photo-1603481546238-48724041521?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -67,7 +67,7 @@ const About = ({ sectionRef }: AboutProps) => {
 
         <div className="text-[#98e8ef] text-sm md:text-md lg:text-lg space-y-4 leading-relaxed tracking-wide font-light">
           <p>
-          I'm a fullstack developer passionate about building accessible,
+            I'm a fullstack developer passionate about building accessible,
             pixel-perfect, and resilient applications that fuse thoughtful
             design with solid engineering. I thrive at the intersection of
             creativity and code — weaving logic and aesthetics into seamless
@@ -75,7 +75,7 @@ const About = ({ sectionRef }: AboutProps) => {
             performance, usability, and precision in mind.
           </p>
           <p>
-          In my spare time, you'll usually find me jamming on my guitar,
+            In my spare time, you'll usually find me jamming on my guitar,
             getting lost in a good rhythm, sinking threes on the court, or
             diving into immersive game worlds — headphones on, heart full,
             controller ready. And when inspiration strikes, I’m often tinkering
@@ -100,7 +100,7 @@ const About = ({ sectionRef }: AboutProps) => {
         <ThreeDMarquee images={images} />
       </motion.div>
     </section>
-  )
+  );
 };
 
 export default About;
