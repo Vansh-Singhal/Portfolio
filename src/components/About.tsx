@@ -5,6 +5,7 @@ import { ThreeDMarquee } from "./ui/3d-marquee";
 import HoverButton from "./ui/hover-button";
 import TextUnderline from "./ui/text-underline";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const images = [
   "https://images.unsplash.com/photo-1603481546238-48724041521?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -84,9 +85,9 @@ const About = ({ sectionRef }: AboutProps) => {
           </p>
         </div>
 
-        <div className="md:pt-4 w-full flex flex-row-reverse">
-          <HoverButton text="My Resume" icon={<FaDownload />} />
-        </div>
+          <Link href="/resume.pdf" target="_blank" className="md:pt-4 w-full flex flex-row-reverse">
+            <HoverButton text="My Resume" icon={<FaDownload />} />
+          </Link>
       </motion.div>
 
       {/* Right Image Marquee */}
