@@ -10,6 +10,7 @@ import {
 import { ContainerTextFlip } from "./ui/containter-text-flip";
 import { GridItem } from "./ui/grid-items";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
+import { motion } from "framer-motion";
 
 const skillsData = [
   {
@@ -179,9 +180,24 @@ const Skills = () => {
       id="skills"
       className="min-h-screen max-w-screen px-8 bg-gradient-to-b from-[#151525] via-[#101f01a] to-[#102015] flex flex-col items-center justify-center relative gap-8 overflow-hidden"
     >
-      <ContainerTextFlip words={["SKILLS", "EXPERTISE", "TECH STACKS"]} />
+      {/* Heading Animation */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <ContainerTextFlip words={["SKILLS", "EXPERTISE", "TECH STACKS"]} />
+      </motion.div>
 
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem]">
+      {/* Grid Animation */}
+      <motion.ul
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem]"
+      >
         {skillsData.map((skill) => (
           <GridItem
             key={skill.title}
@@ -192,7 +208,7 @@ const Skills = () => {
             tools={<AnimatedTooltip items={skill.tools} />}
           />
         ))}
-      </ul>
+      </motion.ul>
     </section>
   );
 };

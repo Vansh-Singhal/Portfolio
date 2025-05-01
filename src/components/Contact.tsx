@@ -16,7 +16,7 @@ const SkeletonOne = () => (
     <p className="font-bold md:text-4xl text-xl text-white">Email</p>
     <Link
       href="mailto:vanshsinghal@hotmail.com"
-      className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2 "
+      className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       vanshsinghal@hotmail.com <IoIosNavigate size={20} />
     </Link>
@@ -28,7 +28,7 @@ const SkeletonTwo = () => (
     <p className="font-bold md:text-4xl text-xl text-white">Contact No.</p>
     <Link
       href="tel:+919773699880"
-      className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2 "
+      className="font-normal text-base my-4 max-w-lg text-neutral-200 hover:text-[#98e8ef] transition duration-300 flex gap-2"
     >
       +91 9773699880 <IoIosNavigate size={20} />
     </Link>
@@ -63,30 +63,30 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2 cursor-pointer ",
+    className: "md:col-span-2 cursor-pointer",
     thumbnail:
-      "https://images.unsplash.com/photo-1584543515885-b8981dbf0b5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1584543515885-b8981dbf0b5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1 cursor-pointer ",
+    className: "col-span-1 cursor-pointer",
     thumbnail:
-      "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1520923642038-b4259acecbd7?q=80&w=2019&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1 cursor-pointer",
     thumbnail:
-      "https://images.unsplash.com/photo-1596526131090-bcbe09e432d3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596526131090-bcbe09e432d3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2 cursor-pointer ",
+    className: "md:col-span-2 cursor-pointer",
     thumbnail:
-      "https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1611944212129-29977ae1398c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3",
   },
 ];
 
@@ -102,7 +102,14 @@ const Contact: React.FC = () => {
         <ShootingStars />
       </div>
 
-      <div className="relative z-10 w-full lg:w-1/2 h-full p-12 flex flex-col gap-6">
+      {/* Left Column */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        className="relative z-10 w-full lg:w-1/2 h-full p-12 flex flex-col gap-6"
+      >
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-bold tracking-wide text-transparent pl-8">
           <TextUnderline
@@ -112,9 +119,9 @@ const Contact: React.FC = () => {
         </h2>
 
         <LayoutGrid cards={cards} />
-      </div>
+      </motion.div>
 
-      {/* Right Column: Earth Canvas */}
+      {/* Right Column: EarthCanvas */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 0.5)}
         className="hidden lg:block relative z-10 flex-1 h-full max-w-1/2"

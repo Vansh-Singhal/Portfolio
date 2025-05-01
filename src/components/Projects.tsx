@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import Image from "next/image";
 import TextUnderline from "./ui/text-underline";
 import HoverButton from "./ui/hover-button";
 import { FaGithub } from "react-icons/fa";
@@ -57,21 +56,30 @@ const Projects = () => {
   ];
 
   return (
-    <motion.section
+    <section
       id="projects"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
       className="min-h-screen max-w-screen p-8 bg-gradient-to-b from-[#102015] via-[#0a1a0a] to-[#000] flex flex-col-reverse md:flex-row items-center justify-center overflow-hidden relative md:gap-8"
     >
-      <div className="w-full h-full md:max-w-1/2 my-10 p-2 rounded-2xl space-y-8">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full h-full md:max-w-1/2 my-10 p-2 rounded-2xl space-y-8"
+      >
         <ProjectCarousel
           projects={projects}
           className="h-[500px] md:h-[600px] shadow-white/30 shadow-2xl"
         />
-      </div>
-      <div className="my-10 w-full md:max-w-1/2 h-full p-2 rounded-2xl space-y-8">
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+        className="my-10 w-full md:max-w-1/2 h-full p-2 rounded-2xl space-y-8"
+      >
         <h2 className="text-3xl md:text-5xl font-bold tracking-wide text-transparent">
           <TextUnderline
             text="My Projects"
@@ -79,30 +87,37 @@ const Projects = () => {
           />
         </h2>
 
-        <div className="text-[#dbebe7] text-sm md:text-md lg:text-lg space-y-4 leading-relaxed tracking-wide font-light">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="text-[#dbebe7] text-sm md:text-md lg:text-lg space-y-4 leading-relaxed tracking-wide font-light"
+        >
           <p>
             I love using my projects as a space to explore new technologies and
             level up my current stack. Whether it’s building rich UIs with React
             and Three.js or handling backend logic with Node.js or Spring Boot,
-            I’m always experimenting and pushing boundaries. I enjoy bringing
-            design and functionality together through tools like Tailwind,
-            Framer Motion, and Next.js to create fast, responsive apps that just
-            feel right.
+            I’m always experimenting and pushing boundaries...
           </p>
           <p>
             I’m also big on learning by doing — constantly diving into tools
             like Docker, AWS, Firebase, or MongoDB and finding ways to integrate
-            them into my work. Every project is a chance to tinker, build
-            smarter systems, and grow as a fullstack developer by blending what
-            I know with what I’m learning next.
+            them into my work...
           </p>
-        </div>
+        </motion.div>
 
-        <div className="md:pt-4 w-full flex flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          className="md:pt-4 w-full flex flex-row"
+        >
           <HoverButton text="More Projects" icon={<FaGithub size={25} />} />
-        </div>
-      </div>
-    </motion.section>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import { FaLocationDot } from "react-icons/fa6";
@@ -25,19 +25,24 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
   const step = useAnimationStep();
   const [showSubtitle, setShowSubtitle] = useState(false);
 
+  useEffect(() => {
+    if (step < 3) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [step]);
+
   return (
     <section
       ref={ref}
       id="home"
       className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative"
     >
-      <motion.div
-        variants={scrollReveal}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="w-full h-full border-2 border-white/50 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-900 rounded-md backdrop-blur-sm"
-      >
+      <div className="w-full h-full border-2 border-white/50 flex flex-col items-center justify-center relative overflow-hidden bg-neutral-900 rounded-md backdrop-blur-sm">
         <ShootingStars />
         <StarsBackground />
 
@@ -110,7 +115,6 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
             className="absolute bottom-10 w-full text-center space-y-12 px-2 sm:px-8"
           >
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 w-full px-4 justify-between">
-              {/* Left: Navigation */}
               <motion.div
                 className="flex flex-col items-start sm:gap-2 sm:w-1/2"
                 variants={staggerChildren}
@@ -142,7 +146,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
             </motion.div>
           </motion.div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 });
