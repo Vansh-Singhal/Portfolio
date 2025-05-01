@@ -77,7 +77,7 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center cursor-none"
+        className="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center "
       >
         <TbLayoutNavbarCollapseFilled className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>

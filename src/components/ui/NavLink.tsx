@@ -13,7 +13,7 @@ interface NavLinkProps {
 const NavLink = ({ href, text, onClick }: NavLinkProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const baseClasses =
-    "px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 data-cursor-hover";
+    "px-2 py-2 text-md md:text-lg hover:text-white/70 flex items-center gap-2 cursor-pointer";
 
   const handleClick = () => {
     setIsClicked(true);

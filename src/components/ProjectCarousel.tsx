@@ -63,14 +63,14 @@ export default function ProjectCarousel({ projects, className }: ProjectCarousel
       {/* Navigation buttons */}
       <button
         onClick={prevProject}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-md transition-all hover:bg-black/70"
+        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-md transition-all hover:bg-black/70 cursor-pointer"
         aria-label="Previous project"
       >
         <IoChevronBack className="h-6 w-6" />
       </button>
       <button
         onClick={nextProject}
-        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-md transition-all hover:bg-black/70"
+        className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white backdrop-blur-md transition-all hover:bg-black/70 cursor-pointer"
         aria-label="Next project"
       >
         <IoChevronForward className="h-6 w-6" />
@@ -143,7 +143,7 @@ function ProjectCard({ project }: { project: Project }) {
           href={project.URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-flex items-center justify-center rounded-md border border-[#a0f5d1]/20 bg-[#a9afff]/10 px-4 py-2 text-sm font-medium text-[#a0f5d1] transition-colors hover:bg-[#a0f5d1]/20 focus:outline-none focus:ring-2 focus:ring-[#a0f5d1]/30 focus:ring-offset-2 focus:ring-offset-[#102015] group cursor-none"
+          className="mt-4 inline-flex items-center justify-center rounded-md border border-[#a0f5d1]/20 bg-[#a9afff]/10 px-4 py-2 text-sm font-medium text-[#a0f5d1] transition-colors hover:bg-[#a0f5d1]/20 focus:outline-none focus:ring-2 focus:ring-[#a0f5d1]/30 focus:ring-offset-2 focus:ring-offset-[#102015] group"
         >
           View Project
           <FiExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

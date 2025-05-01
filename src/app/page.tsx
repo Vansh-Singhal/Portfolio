@@ -13,7 +13,6 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 import { FaHome } from "react-icons/fa";
 import Contact from "@/components/Contact";
 import CursorGlowWrapper from "@/components/ui/cursor-glow-wrapper";
-import CustomCursor from "@/components/ui/custom-cursor";
 
 const Home = () => {
   const links = [
@@ -85,7 +84,6 @@ const Home = () => {
 
   return (
     <div className="max-w-screen overflow-hidden">
-    <CustomCursor /> 
       {loading ? (
         <MultiStepLoader
           loadingStates={loadingStates}

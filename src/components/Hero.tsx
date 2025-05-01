@@ -8,7 +8,6 @@ import { FaLocationDot } from "react-icons/fa6";
 import TypingText from "@/components/ui/typing-text";
 import { useAnimationStep } from "@/hooks/useAnimationStep";
 import NavLink from "@/components/ui/NavLink";
-import CustomCursor from "@/components/ui/CustomCursor";
 import {
   fadeIn,
   fadeInUp,
@@ -32,7 +31,6 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
       id="home"
       className="h-screen max-w-screen p-8 bg-black flex items-center justify-center overflow-hidden relative"
     >
-      <CustomCursor />
       <motion.div
         variants={scrollReveal}
         initial="initial"
@@ -125,11 +123,11 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
 
               <motion.p
                 variants={fadeInUp}
-                className="text-sm md:text-base text-gray-400 leading-relaxed sm:text-right sm:max-w-xs sm:ml-auto self-center data-cursor-hover"
+                className="text-sm md:text-base text-gray-400 leading-relaxed sm:text-right sm:max-w-xs sm:ml-auto self-center"
               >
                 <span className="font-bold italic tracking-wide">
                   Results-driven Full Stack Web Developer
-                </span>{" "}
+                </span>
                 with a strong passion for building scalable, high-performance
                 web applications.
               </motion.p>
@@ -137,7 +135,7 @@ const Hero = forwardRef<HTMLElement, Props>(({ scrollRef }, ref) => {
 
             <motion.div
               variants={fadeInUp}
-              className="text-lg text-gray-300 flex items-center justify-center text-center gap-2 data-cursor-hover"
+              className="text-lg text-gray-300 flex items-center justify-center text-center gap-2"
             >
               <FaLocationDot />
               <span> New Delhi, India</span>
