@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Knewave } from 'next/font/google';
 
 const KnewaveFont = Knewave({
+  subsets : ["latin"],
   weight : "400",
 });
 
