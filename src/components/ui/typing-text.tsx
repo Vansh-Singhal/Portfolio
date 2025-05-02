@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Knewave } from 'next/font/google';
+
+const KnewaveFont = Knewave({
+  weight : "400",
+});
 
 interface TypingTextProps {
   text: string;
@@ -26,7 +31,7 @@ const TypingText = ({ text, speed = 100, onComplete }: TypingTextProps) => {
   }, [currentIndex, text, speed, onComplete]);
 
   return (
-    <div className="font-mono">
+    <div className={`p-6 ${KnewaveFont.className}`}>
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
